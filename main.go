@@ -18,12 +18,13 @@ type NewsArticle struct {
 	Title       string `json:"title"`
 	Description string `json:"description"`
 	URL         string `json:"url"`
+	apiKey      string   //your api key
 }
 
 func fetchTopHeadlines() {
 	for {
 		// Define the API endpoint for top headlines
-		topHeadlinesURL := "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=" + apiKey
+		topHeadlinesURL := "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=" + apiKey   
 		response, err := http.Get(topHeadlinesURL)
 		if err != nil {
 			log.Printf("Failed to fetch top headlines: %v", err)
