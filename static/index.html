@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tech Headlines</title>
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+<style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #0077b6;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.news-list {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.news-article {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
+    margin: 0;
+    color: #0077b6;
+}
+
+a {
+    text-decoration: none;
+    color: #0077b6;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.description {
+    font-size: 16px;
+    color: #444;
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>Tech Headlines</h1>
+    </header>
+    <section class="news-list">
+        {{range .TopHeadlines}}
+        <article class="news-article">
+            <h2><a href="{{.URL}}" target="_blank">{{.Title}}</a></h2>
+            <p class="description">{{.Description}}</p>
+        </article>
+        {{end}}
+    </section>
+</body>
+</html>
+
